@@ -1,15 +1,15 @@
 #!/bin/bash
 HOSTNAME=""
 CLIENTKEY=""
-
-IP4ADDR=$(curl -s http://checkip.dyndns.com | grep -o "[0-9]\{1,3\}.[0-9]\{1,3\}.[0-9]\{1,3\}.[0-9]\{1,3\}")
-IP6ADDR=$(curl -s http://checkipv6.dyndns.com | grep -o "[0-9a-f\:]\{8,\}")
+IPCACHE="/var/tmp/dynupdate/ipcache"
+LOG_FILE="/var/tmp/dynupdate/log"
+IP4ADDR=$(curl -s https://ip4.ddnss.de/meineip.php | grep -o "[0-9]\{1,3\}.[0-9]\{1,3\}.[0-9]\{1,3\}.[0-9]\{1,3\}")
+IP6ADDR=$(curl -s https://ip6.ddnss.de/meineip.php | grep -o "[0-9a-f\:]\{8,\}")
 if [ "$IP4ADDR" = "" -o "$IP6ADDR" = "" ]
 then
         echo "Error: unable to determine IP address" 1>&2
         exit 1
 fi
-IPCACHE="/var/tmp/dynupdate/ipcache"
 if [ -f "$IPCACHE" ]
 then
         source "$IPCACHE"
