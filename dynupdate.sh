@@ -25,7 +25,7 @@ then
         mkdir -p $(dirname "$IPCACHE")
         echo "OLDIP4ADDR=\"$IP4ADDR\"" > "$IPCACHE"
         echo "OLDIP6ADDR=\"$IP6ADDR\"" >> "$IPCACHE"
-        mkdir p $(dirname "$LOG_FILE")
+        mkdir -p $(dirname "$LOG_FILE")
         timestamp=$( date +%Y-%m-%d_%H-%M-%S )
         echo "Update IP - \"$IP4ADDR\" + \"$IP6ADDR\" + \"$timestamp\"" >> "$LOG_FILE"
 
