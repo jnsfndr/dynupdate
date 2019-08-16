@@ -1,7 +1,7 @@
 # Updateclient for the DynDNS Host ddnss.de
 
-This client is at this moment only for Dualstack. <br />
-It updates IPv4 and IPv6 simultaneously.
+This client can update v4 and v6 <br />
+It can update v4 and v6 simultaneously.
 
 
 ## Usage
@@ -9,10 +9,13 @@ It updates IPv4 and IPv6 simultaneously.
 
 Set **HOSTNAME** to your Hostname which you want to update. <br />
 If you want to update more than one with the same ip, then <br />
-`HOSTNAME="host1,host2"`
+`HOSTNAME="host1,host2"` <br />
 
 
-Set **CLIENTKEY** to your Update-Key
+Set **CLIENTKEY** to your Update-Key <br />
+
+If you want to update IPv4 **AND** IPv6, then let the values be true. <br />
+Change the values to false if you only want to change one IP. <br />
 
 
 Now make your script executable <br />
